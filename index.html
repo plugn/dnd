@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DnD Tree</title>
+	<link rel="stylesheet" href="tree.css">
+	<link rel="stylesheet" href="app.css">
+	<script src="src/tree.js"></script>
+	<script src="Sortable.js"></script>
+	<!--<script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>-->
+
+
+</head>
+<body>
+<div id="multi">
+	<div id="group1" class="group">
+		<b class="handle">GROUP 1</b>
+		<p class="item">G1 one</p>
+		<p class="item">G1 two</p>
+		<p class="item">G1 three</p>
+	</div>
+	<div id="group2" class="group">
+		<b class="handle">GROUP 2</b>
+		<p class="item">G2 one</p>
+		<p class="item">G2 two</p>
+		<p class="item">G2 three</p>
+	</div>
+
+	<div id="group3" class="group">
+		<b class="handle">GROUP 3</b>
+
+		<p class="item">G3 one</p>
+		<p class="item">G3 two</p>
+		<p class="item">G3 three</p>
+
+	</div>
+
+</div>
+
+<script>
+	function qs(q) {
+		return document.querySelector(q);
+	}
+
+	// Multi groups
+
+	var listItems = document.querySelectorAll('.group');
+	console.log(' :::: ', listItems);
+	listItems.forEach(function (el){
+//		console.log(' *** el',  el);
+		Sortable.create(el, {
+			draggable: '.item',
+			handle: '.item',
+			group: 'photo',
+			animation: 150
+		});
+	});
+
+	var st0 = Sortable.create(document.querySelector('#multi'), {
+		animation: 150,
+		draggable: '.group',
+		handle: '.handle'
+	});
+	console.log('st0', st0);
+
+
+</script>
+
+
+</body>
+</html>

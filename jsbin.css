@@ -1,0 +1,19 @@
+.block {
+	display: inline-block;
+	background-color: #acc;
+	padding: 2px;
+	display:inline-block;
+	vertical-align: top;
+	width: 150px;
+}
+
+.block .item {
+	background-color: #ffcac3;
+	margin: 5px;
+}
+.item span {
+	outline: 1px dashed #464637;
+}
+.column {
+	display: inline-block;
+}
